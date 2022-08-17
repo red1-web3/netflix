@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind utilities;
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #111;
+}
+
+.__groupElement:hover {
+  opacity: 1;
+}
+.__groupElement:hover > div > p {
+  transform: translateY(0);
+  opacity: 1;
+}
+.__groupElement:hover > div > div {
+  transform: translateY(0);
+  opacity: 1;
+}
+.__groupElement:hover .__heart {
+  opacity: 1;
+  transform: scale(1);
+}
