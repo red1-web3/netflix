@@ -25,3 +25,19 @@ body {
   opacity: 1;
   transform: scale(1);
 }
+.ReactModalPortal {
+  position: relative;
+  z-index: 999;
+}
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

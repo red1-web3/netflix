@@ -8,10 +8,15 @@ import "swiper/css/navigation";
 
 function Row({ title, fetchURL }) {
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    axios.get(fetchURL).then((response) => setMovies(response.data.results));
-  }, [fetchURL]);
+    setIsLoading(true);
+    axios.get(fetchURL).then((response) => {
+      setIsLoading(false);
+      setMovies(response.data.results);
+    });
+  }, [isLoading, fetchURL]);
 
   return (
     <React.Fragment>
@@ -40,7 +45,7 @@ function Row({ title, fetchURL }) {
           {movies.map((item, i) => {
             return (
               <SwiperSlide key={i}>
-                <Movie item={item} />
+                <Movie item={item} isLoading={isLoading} />
               </SwiperSlide>
             );
           })}
